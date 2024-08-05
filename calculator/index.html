@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="calculator">
+      <div class="input">
+        <input type="text" id="input"/>
+      </div>
+      <button onclick="getData('1')">1</button>
+      <button onclick="getData('2')">2</button>
+      <button onclick="getData('3')">3</button>
+      <button onclick="getData('+')">+</button>
+      <button onclick="getData('4')">4</button>
+      <button onclick="getData('5')">5</button>
+      <button onclick="getData('6')">6</button>
+      <button onclick="getData('-')">-</button>
+      <button onclick="getData('7')">7</button>
+      <button onclick="getData('8')">8</button>
+      <button onclick="getData('9')">9</button>
+      <button onclick="getData('*')">*</button>
+      <button onclick="cancel()">c</button>
+      <button onclick="getData('0')">0</button>
+      <button onclick="calculator()">=</button>
+      <button onclick="getData('/')">/</button>
+    </div>
+
+    <script>
+      var display = document.getElementById("input");
+      function cancel() {
+        display.value = "";
+      }
+
+      function getData(data) {
+        display.value += data;
+      }
+
+      function calculator() {
+        try {
+          var data = eval(document.getElementById("input").value);
+          display.value = data;
+        } catch {
+          display.value = "";
+        }
+      }
+
+    </script>
+  </body>
+</html>
